@@ -1,0 +1,111 @@
+\documentclass[a4paper,12pt]{template} % Changed from 'template' to 'report'
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{tocloft} 
+\usepackage{titlesec}
+
+% Set margins
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \textbf{Seminar Topic}}\\[0.5cm]
+    {\Large \textbf{CS451 Seminar and Project Preliminary}}\\[1cm]
+    
+    \textit{Seminar Report submitted in partial fulfillment for the degree of}\\
+    {\Large \textbf{B.Tech in Computer Science and Engineering}}\\[1cm]
+    
+    \vfill
+    
+    {\Large \textbf{Submitted by}}\\
+    {\Large \textbf{NAME (Reg No: MUT16CS***)}}\\[1cm]
+    
+    \includegraphics[width=0.6\textwidth]{mits.jpg}
+    \vspace{0.5cm}
+    
+    {\Large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}\\[0.5cm]
+    \small\textsc{(Affiliated to APJ Abdul Kalam Technological University)}\\[0.3cm]
+    
+    {\large \textbf{November 2024}}
+\end{titlepage}
+
+% Certificate Page
+\newpage
+\thispagestyle{plain}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{mits.jpg}\\[0.5cm]
+    \textit{Varikoli P.O., Puthencruz-682308}\\[1cm]
+    
+    {\Large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}\\[1cm]
+    
+    {\LARGE \textbf{CERTIFICATE}}\\[2cm]
+\end{center}
+\vspace{0.5cm}
+\noindent
+This is to certify that the seminar report entitled \textbf{``Topic"} submitted by \textbf{Name (Reg No:)} of Semester VII is a bonafide account of the work done by him/her under our supervision during the academic year 2024-25.
+\vspace{5cm}
+\noindent
+\begin{center}
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Guide:}\\
+    \vspace{0.1cm}\\
+    Asha Raj\\
+    \textit{Asst. Professor}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Coordinators:}\\
+    \vspace{0.1cm}\\
+    Dr. Suja C Nair\\
+    \textit{Asst. Professor}\\
+    
+    Sheena Kurian K\\
+    \textit{Asst. Professor}\\
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Head of the Department:}\\
+    \vspace{0.1cm}\\
+    Dr. Anishin Raj M\\
+    \textit{Head of the Department}
+\end{minipage}%
+\end{center}
+
+
+\newpage
+\input{acknowledge}  
+\newpage
+\input{abstract}     
+
+
+\newpage
+\tableofcontents 
+
+\newpage
+\listoffigures 
+
+\newpage
+\listoftables
+
+\newpage
+\input{abbreviation}  
+
+% Chapters 
+\newpage
+\input{intro}          
+\input{chapter/topic1} 
+\input{chapter/conclusion} 
+\input{bibliography}
+\input{presentation}
+
+\end{document}
