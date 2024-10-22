@@ -1,0 +1,212 @@
+\documentclass[a4paper,12pt]{template} 
+% Changed from 'template' to 'report'
+% You may want to change 'template' to 'report' if you want a standard LaTeX document type. 
+% 'report' class supports chapters, which is useful for large documents like seminar reports.
+
+% Packages
+\usepackage{graphicx}   % For including images
+\usepackage{setspace}   % For setting line spacing
+\usepackage{geometry}   % For adjusting page geometry (margins, etc.)
+\usepackage{tocloft}    % For customizing the table of contents
+\usepackage{titlesec}   % For customizing section and chapter titles
+\usepackage{ulem}       % For underlining and striking text
+\usepackage{caption}    % For customizing captions of figures and tables
+\usepackage{float}      % For placing figures or tables at a specific location
+\usepackage{amsmath}    % For advanced math formatting
+\usepackage{pdfpages}   % For including PDF pages within the document
+
+\newcommand{\inputwithouttoc}[1]{%
+    \input{#1}%
+    \addcontentsline{toc}{chapter}{\hspace{2em}#1}%
+}
+% This command allows for adding chapters to the document without including them in the TOC.
+
+% Set margins
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm
+}
+% This adjusts the margins of the document to 2.5 cm on all sides.
+
+
+% Define custom chapter indentation (use 0em for no indent)
+\newlength\chapindent
+\setlength\chapindent{2em}  % Adjust this value for chapter indent
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge \textbf{OBJECT DETECTION USING }}\\[0.5cm]
+    {\Huge \textbf{YOLO}}\\[2cm]
+    % Large title centered on the page. 
+    % The \vspace*{2cm} command adds vertical space at the top.
+
+    {\Large \textbf{CSQ413 Seminar}}\\[1cm]
+    % This line introduces the seminar report.
+    
+    \textit{Seminar Report submitted in partial fulfillment for the degree of}\\
+    {\Large \textbf{B.Tech in Computer Science and Engineering}}\\[1cm]
+    % Additional details about the seminar.
+    
+    \vfill % Creates vertical space between the title and the bottom of the page.
+    
+    {\Large \textbf{Submitted by}}\\
+    {\Large \textbf{ALWIN YESUDAS (Reg No: MUT21CS021)}}\\[1cm]
+    % This specifies the submitter's name and registration number.
+    
+    \includegraphics[width=0.6\textwidth]{images/Mits Logo.jpg}
+    % The university logo is included here, scaled to 60% of the text width.
+    
+    \vspace{0.5cm}
+    {\Large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}\\[0.5cm]
+    \small\textsc{(Affiliated to APJ Abdul Kalam Technological University)}\\[0.3cm]
+    % More institution-specific details.
+    
+    {\large \textbf{November 2024}} 
+    % Submission date.
+\end{titlepage}
+
+% Certificate Page
+\newpage
+\thispagestyle{plain}
+% Starts the certificate page with plain style (no header or footer).
+
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{images/Mits Logo.jpg}\\[0.5cm]
+    \textit{Varikoli P.O., Puthencruz-682308}\\[2cm]
+    % University details and logo centered.
+    
+    {\Large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}}\\[2cm]
+    % Department heading.
+    
+    {\LARGE \textbf{CERTIFICATE}}\\[1cm]
+    % Certificate heading.
+\end{center}
+
+\vspace{0.4cm}
+\noindent
+This is to certify that the seminar report entitled \textbf{``Object Detection Using YOLO (You Only Look Once) "} submitted by \textbf{ALWIN YESUDAS (Reg No: MUT21CS021)} of Semester VII is a bonafide account of the work done by him under our supervision during the academic year 2024-25.
+% Certification statement for the report.
+
+\vspace{3cm}
+\noindent
+\begin{center}
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Guide:}\\[2cm]
+    Haritha .H\\
+    \textit{Asst. Professor}
+    % Guide's details.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Coordinator:}\\[2cm]
+    Dr. Suja C Nair\\
+    \textit{Assoc. Professor}\\[2cm]
+    % Coordinator's details.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Head of the Department:}\\[2cm]
+    Dr. Anishin Raj M\\
+    \textit{Head of the Department}
+    % HOD's details.
+\end{minipage}
+\end{center}
+% This section is divided into three columns for the Guide, Coordinators, and HOD.
+
+% Stop indenting after chapters (for sections like Bibliography or Appendix)
+\addtocontents{toc}{\protect\setlength{\cftchapindent}{0em}}  % Reset indent for subsequent entries
+
+% Acknowledgements Page
+\newpage
+\input{chapter/acknowledgements}  
+% This command includes the Acknowledgements page, which should be stored in the specified path.
+
+% Set indentation for chapter entries in TOC
+\setlength{\cftchapindent}{2em} % Adjust the value as needed
+
+% Contents Page
+\newpage
+\tableofcontents
+% Generates the table of contents.
+
+% Stop indenting after chapters (for sections like Bibliography or Appendix)
+\addtocontents{toc}{\protect\setlength{\cftchapindent}{0em}}  % Reset indent for subsequent entries
+
+% Abstract Page
+\newpage
+\input{chapter/abstract}     
+% This command includes the Abstract, which should be stored in the specified path.
+
+% List of Figures Page
+\newpage
+\prefacesection{List of Figures}
+\vspace{-8em} % Adjust the value as needed to reduce the space
+\begingroup
+\let\listfigurename\relax % Suppress the default heading
+\listoffigures
+\endgroup
+% Creates a List of Figures without the default heading.
+
+% List of Tables Page
+\newpage
+\prefacesection{List of Tables}
+\vspace{-8em} % Adjust the value as needed to reduce the space
+\begingroup
+\let\listtablename\relax % Suppress the default heading
+\listoftables
+\endgroup
+% Creates a List of Tables without the default heading.
+
+% Abbreviation Page
+\newpage
+\input{chapter/abbreviation}  
+% This command includes the Abbreviation section, which should be stored in the specified path.
+
+% Chapters
+
+\newpage
+% Add 'Chapters' heading to TOC
+\addtocontents{toc}{\vspace{1em}\textbf{Chapters}\par}
+% Adds a "Chapters" section in the table of contents.
+
+
+% Indent chapters
+\addtocontents{toc}{\protect\setlength{\cftchapindent}{\chapindent}}  % Set indentation for chapters
+
+% Include chapters using \input
+\input{chapter/introduction}     % Includes the Introduction chapter
+\input{chapter/literature survey}  % Includes the Literature Survey chapter
+\input{chapter/comparison}      % Includes the Comparison chapter
+\input{chapter/conclusion}      % Includes the Conclusion chapter
+
+% Stop indenting after chapters (for sections like Bibliography or Appendix)
+\addtocontents{toc}{\protect\setlength{\cftchapindent}{0em}}  % Reset indent for subsequent entries
+
+% Bibliography Page
+\input{chapter/bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+% Includes the Bibliography and adds it to the table of contents.
+
+% Appendix A Page
+\input{chapter/appendixA}
+% Includes Appendix A.
+
+% Appendix B Page
+\input{chapter/appendixB}
+% Includes Appendix B.
+
+% Appendix C Page
+\input{chapter/appendixC}
+% Includes Appendix C.
+
+\end{document}
+%
+% End of the document
+%
+%

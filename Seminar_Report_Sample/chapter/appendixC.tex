@@ -1,0 +1,29 @@
+\prefacesection{Appendix C: Viva Q\&A}
+% Creates a section titled "Appendix C: Viva Q&A" for displaying the viva questions and answers.
+%
+%
+%
+\textbf{Q: What is the main advantage of the YOLO (You Only Look Once) algorithm for object detection?} \\
+% Bold text for the first question.
+A: The main advantage of the YOLO algorithm is its ability to perform real-time object detection with high accuracy. YOLO treats object detection as a single-stage problem, predicting both bounding boxes and class probabilities in one evaluation, which makes it significantly faster than traditional methods like R-CNN.
+% Answer to the first question explaining the efficiency and speed of YOLO over traditional methods.
+\\\\
+% Inserts two line breaks for spacing.
+%
+%
+\textbf{Q: What is non-maximum suppression (NMS) in the context of the YOLO algorithm?} \\
+% Bold text for the second question.
+A: Non-maximum suppression (NMS) is a technique used in YOLO to eliminate duplicate bounding box predictions for the same object. It involves selecting the bounding box with the highest confidence score, computing the Intersection over Union (IoU) with other boxes of the same class, and removing boxes with an IoU greater than a specified threshold.
+% Answer to the second question explaining how NMS reduces redundant bounding boxes for the same object.
+\\\\
+% Inserts two line breaks for spacing.
+%
+%
+\textbf{Q: How does the YOLOv8-CAW model improve object detection accuracy?} \\
+% Bold text for the third question.
+A: The YOLOv8-CAW model improves object detection accuracy by integrating the Coordinate Attention (CA) module and the Wise-IoU loss function. The CA module enhances the model's focus on important regions of the image, while the Wise-IoU loss function improves bounding box predictions by adjusting loss coefficients based on the quality of samples.
+% Answer to the third question explaining the improvements in YOLOv8-CAW model through the use of CA and Wise-IoU loss function.
+%
+% End of the chapter
+%
+%
